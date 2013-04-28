@@ -149,3 +149,6 @@ svg.slide circle {
   fill: #58d6c4;
 }
 
+.hidden {
+  display: none;
+}

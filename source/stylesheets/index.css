@@ -62,7 +62,6 @@ body {
 #companies,
 #company {
   width: 258px;
-  float: left;
   text-align: center;
   padding: 20px;
 }
@@ -70,6 +69,7 @@ body {
 #company {
   border: solid #919191;
   border-width: 0 0 1px 0;
+  float: left;
 }
 
 #company table {
@@ -86,12 +86,22 @@ body {
   text-align: left;
 }
 
+#companies {
+  float: right;
+  height: 600px;
+  overflow: scroll;
+}
+
 #companies .logo {
-  border: 1px red solid;
   height: 40px;
   width: 113px;
   margin: 10px 10px 0 0;
   float: left;
+}
+
+#companies img {
+  max-width: 113px;
+  max-height: 40px;
 }
 
 #companies .logo.even {
@@ -99,11 +109,11 @@ body {
 }
 
 #stack {
-  width: 100%;
+  width: 780px;
   min-height: 300px;
   float: left;
   border: solid #919191;
-  border-width: 1px 0 0 0;
+  border-width: 1px 1px 0 0;
 }
 
 .axis path,

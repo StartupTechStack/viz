@@ -22,10 +22,11 @@ title: Startup [TECH] Stack
       });
       slide1.draw();
 
-      window.stack = new Stack(STACK);
+      window.stack = new Stack(DATA.stack);
       stack.draw();
 
       window.companies = new Companies(DATA.by_year["2005"]);
+      companies.showCompanies("2005");
       window.company = new Company();
     });
   </script>
@@ -43,7 +44,7 @@ title: Startup [TECH] Stack
   </div>
 
   <div id="company">
-    <h2>2012 Snapshot</h2>
+    <h2 data-name="snapshot">2012 Snapshot</h2>
 
     <div data-name="logo"></div>
 
@@ -53,38 +54,40 @@ title: Startup [TECH] Stack
         <td data-name='url'></td>
       <tr>
         <th>Date founded</th>
-        <td data-name='date-founded'>Apr 2010</td>
+        <td data-name='date-founded'></td>
       </tr>
       <tr>
         <th>Industry</th>
-        <td data-name='industry'>Social Community</td>
+        <td data-name='industry'></td>
       </tr>
       <tr>
         <th>Funding Amount</th>
-        <td data-name='funding-amount'>64M</td>
+        <td data-name='funding-amount'></td>
       </tr>
       <tr>
         <th>Tech Stack</th>
-        <td data-name='tech-stack'>ObjC, JS</td>
+        <td data-name='tech-stack'></td>
       </tr>
       <tr>
         <th>Location</th>
-        <td data-name='location'>New York</td>
+        <td data-name='location'></td>
       </tr>
     </table>
   </div>
 
   <div id="companies">
-    <h2>2012</h2>
+    <h2 data-name="companies">2012</h2>
 
-    <div class="logo"></div>
-    <div class="logo even"></div>
-    <div class="logo"></div>
-    <div class="logo even"></div>
-    <div class="logo"></div>
-    <div class="logo even"></div>
-    <div class="logo"></div>
-    <div class="logo even"></div>
+    <div class="logos">
+      <div class="logo"></div>
+      <div class="logo even"></div>
+      <div class="logo"></div>
+      <div class="logo even"></div>
+      <div class="logo"></div>
+      <div class="logo even"></div>
+      <div class="logo"></div>
+      <div class="logo even"></div>
+    </div>
   </div>
 
   <div id="stack"></div>

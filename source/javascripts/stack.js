@@ -77,7 +77,7 @@
           .attr("data-j", j)
           .attr("data-year", e.year)
           .attr("width", self.xScale.rangeBand())
-          .attr("height", self.yScale(8).toString())
+          .attr("height", "1")
           .on("mouseover", function() {
             self.tooltip.style("visibility", "visible");
           })

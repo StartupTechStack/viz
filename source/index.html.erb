@@ -1,6 +1,17 @@
 ---
 title: Welcome to Middleman
 ---
+<% content_for :head do %>
+  <style>
+    #chart {
+      width: 100%;
+      height: 400%;
+    }
+  </style>
+<% end %>
+
+
+<div id="chart"></div>
 
 <% content_for :javascripts do %>
   <script src="/javascripts/draw.js"></script>

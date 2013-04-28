@@ -4,7 +4,7 @@
   };
 
   Company.prototype.showCompany = function(name) {
-    var data = COMPANIES[name];
+    var data = DATA.companies[name];
 
     if (data) {
       $('[data-name="logo"]').html($('<img/>').attr('src', data.logoUrl));

@@ -1,6 +1,7 @@
 ;(function() {
   var Slide = function(data) {
-    this.init(data);
+    this.init(data.companies);
+    this.year = data.year;
   };
 
   Slide.prototype.init = function(data) {
@@ -30,23 +31,23 @@
     this.width = $("#slides").width();
     this.height = 500;
     this.formatMoney = d3.format(",.f");
-    this.padding = 50;
+    this.padding = 80;
   };
 
   Slide.prototype.setScales = function() {
     this.xScale = d3.scale.ordinal()
-      .domain($.map(this.data.companies, function(e, i) { return e.category; }))
+      .domain($.map(this.data, function(e, i) { return e.category; }))
       .rangePoints([this.padding, this.width - this.padding * 2], 0.5);
 
     this.yScale = d3.scale.linear()
       .domain([
-        0, d3.max(this.data.companies, function(d) { return d.amount; })
+        0, d3.max(this.data, function(d) { return d.amount; })
       ])
       .range([this.height - this.padding, this.padding])
       .nice();
 
     this.colorScale = d3.scale.ordinal()
-      .domain($.map(this.data.companies, function(e, i) { return e.name; }))
+      .domain($.map(this.data, function(e, i) { return e.name; }))
       .range(['#58d6c4', 'green']);
   };
 
@@ -80,7 +81,7 @@
       .attr('height', this.height);
 
     svg.selectAll("circle")
-      .data(this.data.companies)
+      .data(this.data)
       .enter()
       .append("circle")
       .attr("cx", function(d) {
@@ -136,7 +137,7 @@
       .attr("x", this.width / 2)
       .attr("y", this.padding / 2)
       .attr("text-anchor", "middle")
-      .text("Funding by category for " + this.data.year);
+      .text("Funding by category for " + this.year);
   };
 
   window.Slide = Slide;

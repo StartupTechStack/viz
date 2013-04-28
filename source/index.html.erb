@@ -1,7 +1,89 @@
 ---
-title: Welcome to Middleman
+title: Startup [TECH] Stack
 ---
 
-<% content_for :javascripts do %>
-  <script src="/javascripts/draw.js"></script>
+<% content_for :head do %>
+  <link rel="stylesheet" href="/stylesheets/index.css" text="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css' />
 <% end %>
+
+<% content_for :javascripts do %>
+  <script src="/javascripts/company.js"></script>
+  <script src="/javascripts/companies.js"></script>
+  <script src="/javascripts/slide.js"></script>
+  <script src="/javascripts/stack.js"></script>
+
+  <script>
+    $(function() {
+      window.slide1 = new Slide(DATA[0]);
+      slide1.draw();
+
+      window.stack = new Stack(STACK);
+      stack.draw();
+
+      window.companies = new Companies(DATA[0].companies);
+      window.company = new Company();
+    });
+  </script>
+<% end %>
+
+<div class="header">
+  <h1>Startup [TECH] Stack</h1>
+</div>
+
+<section class="container">
+  <div id="slides"></div>
+
+  <div id="search">
+    <input type="search" placeholder="Search..." />
+  </div>
+
+  <div id="company">
+    <h2>2012 Snapshot</h2>
+
+    <div data-name="logo"></div>
+
+    <table>
+      <tr>
+        <th>URL</th>
+        <td data-name='url'></td>
+      <tr>
+        <th>Date founded</th>
+        <td data-name='date-founded'>Apr 2010</td>
+      </tr>
+      <tr>
+        <th>Industry</th>
+        <td data-name='industry'>Social Community</td>
+      </tr>
+      <tr>
+        <th>Funding Amount</th>
+        <td data-name='funding-amount'>64M</td>
+      </tr>
+      <tr>
+        <th>Tech Stack</th>
+        <td data-name='tech-stack'>ObjC, JS</td>
+      </tr>
+      <tr>
+        <th>Location</th>
+        <td data-name='location'>New York</td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="companies">
+    <h2>2012</h2>
+
+    <div class="logo"></div>
+    <div class="logo even"></div>
+    <div class="logo"></div>
+    <div class="logo even"></div>
+    <div class="logo"></div>
+    <div class="logo even"></div>
+    <div class="logo"></div>
+    <div class="logo even"></div>
+  </div>
+
+  <div id="stack"></div>
+
+  <div style="clear: both;"></div>
+</section>

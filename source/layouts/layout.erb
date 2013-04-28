@@ -7,20 +7,7 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= data.page.title || "The Middleman" %></title>
     <%= stylesheet_link_tag "normalize", "all" %>
-
-    <style>
-      .axis path,
-      .axis line {
-        fill: none;
-        stroke: black;
-        shape-rendering: crispEdges;
-      }
-
-      .axis text {
-        font-family: Helvetica;
-        font-size: 11px;
-      }
-    </style>
+    <%= yield_content :head %>
   </head>
 
   <body class="<%= page_classes %>">

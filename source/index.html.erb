@@ -15,7 +15,7 @@ title: Startup [TECH] Stack
 
   <script>
     $(function() {
-      year = "2004";
+      year = "2012";
       window.slide1 = new Slide({
         year: year,
         companies: DATA.by_year[year]
@@ -25,8 +25,8 @@ title: Startup [TECH] Stack
       window.stack = new Stack(DATA.stack);
       stack.draw();
 
-      window.companies = new Companies(DATA.by_year["2005"]);
-      companies.showCompanies("2005");
+      window.companies = new Companies(DATA.by_year[year]);
+      companies.showCompanies(year);
       window.company = new Company();
     });
   </script>

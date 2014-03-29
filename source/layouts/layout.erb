@@ -13,9 +13,9 @@
   <body class="<%= page_classes %>">
     <%= yield %>
 
-    <script src="/javascripts/vendor/jquery-1.9.1.min.js"></script>
-    <script src="/javascripts/vendor/d3.v3.js"></script>
-    <%= javascript_include_tag  "all" %>
+    <script src="javascripts/vendor/jquery-1.9.1.min.js"></script>
+    <script src="javascripts/vendor/d3.v3.js"></script>
+    <script src="javascripts/all.js"></script>
     <%= yield_content :javascripts %>
   </body>
 </html>
